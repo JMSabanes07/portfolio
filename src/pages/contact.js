@@ -20,7 +20,7 @@ const Projects = (params) => {
     show: {
       transition: {
         staggerChildren: 0.3,
-        delayChildren: 1.2,
+        delayChildren: 0.5,
       },
     },
     hidden: {
