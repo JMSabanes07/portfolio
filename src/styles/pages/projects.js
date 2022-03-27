@@ -64,7 +64,7 @@ export const Article = styled.article`
     }
   }
   @media (min-width: 1025px) {
-    grid-template-rows: 4rem 14rem 8.5rem auto auto;
+    grid-template-rows: 4rem 14rem auto auto;
     h2 {
       display: flex;
       justify-content: center;
