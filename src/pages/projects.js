@@ -8,6 +8,9 @@ import {
 import { motion } from 'framer-motion'
 import { Button } from 'styles/components/button'
 import { Title, Subtitle, Desc } from 'styles/pages/container'
+import { FaGlobe } from 'react-icons/fa'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+
 import {
   SiReact,
   SiNextdotjs,
@@ -30,6 +33,7 @@ import {
   SiTypescript,
   SiVisualstudiocode,
   SiExpress,
+  SiGithub,
 } from 'react-icons/si'
 
 const Icons = {
@@ -59,104 +63,38 @@ const Icons = {
 const TitleMotion = motion(Title)
 const SubtitleMotion = motion(Subtitle)
 const DescMotion = motion(Desc)
-const ButtonMotion = motion(Button)
 const ArticleMotion = motion(Article)
-
-const data = [
-  {
-    title: 'This web page!',
-    image: {
-      src: '/a.png',
-      alt: 'a',
-    },
-    variants: [
-      {
-        name: 'SiNextdotjs',
-      },
-      {
-        name: 'SiReact',
-      },
-      {
-        name: 'SiStyledcomponents',
-      },
-    ],
-    link: 'https://sudocoding.com',
-    github: 'https://github.com',
-  },
-  {
-    title: 'This web page!',
-    image: {
-      src: '/a.png',
-      alt: 'a',
-    },
-    variants: [
-      {
-        name: 'SiNextdotjs',
-      },
-      {
-        name: 'SiReact',
-      },
-      {
-        name: 'SiStyledcomponents',
-      },
-    ],
-    link: 'https://sudocoding.com',
-    github: 'https://github.com',
-  },
-  {
-    title: 'This web page!',
-    image: {
-      src: '/a.png',
-      alt: 'a',
-    },
-    variants: [
-      {
-        name: 'SiNextdotjs',
-      },
-      {
-        name: 'SiReact',
-      },
-      {
-        name: 'SiStyledcomponents',
-      },
-    ],
-    link: 'https://sudocoding.com',
-    github: 'https://github.com',
-  },
-  {
-    title: 'This web page!',
-    image: {
-      src: '/a.png',
-      alt: 'a',
-    },
-    variants: [
-      {
-        name: 'SiNextdotjs',
-      },
-      {
-        name: 'SiReact',
-      },
-      {
-        name: 'SiStyledcomponents',
-      },
-    ],
-    link: 'https://sudocoding.com',
-    github: 'https://github.com',
-  },
-]
 
 const Projects = (params) => {
   const [projects, setProjects] = useState(null)
-  const variants = {
+  const articleVariants = {
     show: {
+      y: 0,
+      opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
+        delay: 0.2,
       },
     },
     hidden: {
+      y: 100,
+      opacity: 0,
       transition: {
-        staggerChildren: 0.2,
+        delay: 0.2,
+      },
+    },
+  }
+
+  const hoverVariants = {
+    show: {
+      background: 'rgba(0,0,0,0.5)',
+      transition: {
+        ease: 'easeInOut',
+      },
+    },
+    hidden: {
+      background: 'rgba(0,0,0,0)',
+      transition: {
+        ease: 'easeInOut',
       },
     },
   }
@@ -178,20 +116,43 @@ const Projects = (params) => {
     },
   }
 
-  const childrenVariants = {
+  const titleArticleVariants = {
     show: {
       y: 0,
-      opacity: 1,
       transition: {
         ease: 'easeInOut',
       },
     },
     hidden: {
-      y: '50%',
-      opacity: 0,
+      y: -50,
       transition: {
         ease: 'easeInOut',
       },
+    },
+  }
+  const footerArticleVariants = {
+    show: {
+      y: 0,
+      transition: {
+        ease: 'easeInOut',
+      },
+    },
+    hidden: {
+      y: 50,
+      transition: {
+        ease: 'easeInOut',
+      },
+    },
+  }
+
+  const upAppearVariants = {
+    show: {
+      y: 0,
+      opacity: 1,
+    },
+    hidden: {
+      y: -50,
+      opacity: 0,
     },
   }
 
@@ -213,67 +174,99 @@ const Projects = (params) => {
     const getPost = async () => {
       const result = await fetch('/api/posts')
       setProjects(await result.json())
-      // console.log(await result.json())
     }
     getPost()
   }, [])
 
   return (
     <PageContainerExtend>
-      <TitleMotion initial="hidden" whileInView="show" variants={titleVariant}>
+      <TitleMotion
+        initial="hidden"
+        whileInView="show"
+        variants={titleVariant}
+        viewport={{ once: true }}
+      >
         Projects
         <motion.div className="bar" />
       </TitleMotion>
       <ProjectsContainer>
-        {projects?.map(({ title, image, desc, variants, link, github }, i) => {
-          return (
-            <ArticleMotion
-              initial="hidden"
-              whileInView="show"
-              variants={variants}
-              viewport={{ once: true }}
-              key={i}
-            >
-              <SubtitleMotion variants={childrenVariants}>
-                {title}
-              </SubtitleMotion>
-              <motion.header variants={childrenVariants}>
-                <img src={image.src} alt={image.alt} />
-              </motion.header>
-              {/* <DescMotion variants={childrenVariants} textAlign="justify">
-                {desc}
-              </DescMotion> */}
-              <motion.footer>
-                <motion.ul
-                  initial="hidden"
-                  whileInView="show"
-                  variants={socialVariants}
-                  viewport={{ once: true }}
-                >
-                  {variants.map((variant, i) => {
-                    return (
-                      <motion.li key={i} variants={childrenVariants}>
-                        {Icons[variant.name]()}
-                      </motion.li>
-                    )
-                  })}
-                </motion.ul>
-              </motion.footer>
-              <div className="button-container">
-                {link && (
-                  <ButtonMotion variants={childrenVariants}>
-                    {`<Go to web/>`}
-                  </ButtonMotion>
-                )}
-                {github && (
-                  <ButtonMotion variants={childrenVariants}>
-                    {`<Go to github/>`}
-                  </ButtonMotion>
-                )}
-              </div>
-            </ArticleMotion>
-          )
-        })}
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+        >
+          <Masonry className="mansory">
+            {projects?.map(
+              ({ title, image, desc, variants, link, github }, i) => {
+                return (
+                  <ArticleMotion
+                    initial="hidden"
+                    whileInView="show"
+                    variants={articleVariants}
+                    viewport={{ once: true }}
+                    key={i}
+                  >
+                    <SubtitleMotion variants={titleArticleVariants}>
+                      {title}
+                    </SubtitleMotion>
+                    <motion.main>
+                      <header>
+                        <img src={image.src} alt={image.alt} />
+                      </header>
+                      <DescMotion variants={''} textAlign="justify">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quas totam, fugit, sed unde in nulla nisi maiores, autem
+                        corrupti quod qui praesentium sapiente magni iste
+                        repellat ad! Nisi, totam quod.
+                        {desc}
+                      </DescMotion>
+                    </motion.main>
+                    <motion.footer variants={footerArticleVariants}>
+                      <motion.ul initial="hidden" variants={socialVariants}>
+                        {variants.map((variant, i) => {
+                          return (
+                            <motion.li key={i}>
+                              {Icons[variant.name]()}
+                            </motion.li>
+                          )
+                        })}
+                      </motion.ul>
+                    </motion.footer>
+                    <div className="button-container">
+                      {link && (
+                        <motion.a
+                          whileTap={{ scale: 0.85 }}
+                          whileHover={{ scale: 1.05 }}
+                          href={link}
+                          target="_blank"
+                          variants={upAppearVariants}
+                          rel="noreferrer"
+                        >
+                          {`<`}
+                          <FaGlobe />
+                          {`/>`}
+                        </motion.a>
+                      )}
+                      {github && (
+                        <motion.a
+                          whileTap={{ scale: 0.85 }}
+                          whileHover={{ scale: 1.05 }}
+                          href={github}
+                          target="_blank"
+                          variants={upAppearVariants}
+                          rel="noreferrer"
+                        >
+                          {`<`}
+                          <SiGithub />
+                          {`/>`}
+                        </motion.a>
+                      )}
+                    </div>
+                  </ArticleMotion>
+                )
+              }
+            )}
+            <></>
+          </Masonry>
+        </ResponsiveMasonry>
       </ProjectsContainer>
     </PageContainerExtend>
   )

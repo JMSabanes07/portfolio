@@ -13,6 +13,6 @@ export const LayoutContainer = styled.div`
 
   @media (min-width: 769px) {
     margin: auto;
-    justify-content: center;
+    /* justify-content: center; */
   }
 `

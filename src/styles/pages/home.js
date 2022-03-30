@@ -30,7 +30,9 @@ export const CoverPage = styled.main`
   .button-container {
     display: grid;
     place-content: center;
-    padding: 3rem;
+    @media (min-width: 376px) {
+      padding: 3rem;
+    }
   }
   .image-container {
     display: none;

@@ -14,6 +14,7 @@ export const PageContainerExtend = styled(PageContainer)`
 
   @media (min-width: 767px) {
     ${Desc} {
+      justify-self: center;
       max-width: 767px;
       text-align: center;
     }
@@ -24,7 +25,8 @@ export const PageContainerExtend = styled(PageContainer)`
       }
     }
   }
-  @media (min-width: 1439px) {
+
+  @media (min-width: 769px) {
     grid-template-rows: repeat(4, auto);
     align-content: center;
   }

@@ -69,7 +69,6 @@ const About = () => {
   const childrenVariants = {
     // whileInView: 'show',
     variants: itemsVariants,
-    viewport: { once: true },
   }
 
   return (
@@ -77,6 +76,7 @@ const About = () => {
       initial="hidden"
       whileInView="show"
       variants={variants}
+      viewport={{ once: true }}
       custom={0.3}
     >
       <TitleMotion {...childrenVariants}>
@@ -110,6 +110,7 @@ const About = () => {
         initial="hidden"
         whileInView="show"
         variants={variants}
+        viewport={{ once: true }}
         custom={0.3}
       >
         <ToolMotion {...childrenVariants}>
@@ -197,6 +198,7 @@ const About = () => {
         initial="hidden"
         whileInView="show"
         variants={variants}
+        viewport={{ once: true }}
         custom={0.3}
       >
         <ToolMotion {...childrenVariants}>
