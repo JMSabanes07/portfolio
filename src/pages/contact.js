@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from 'components/layout'
 import { motion } from 'framer-motion'
 import { Title, Desc } from 'styles/pages/container'
@@ -83,6 +84,9 @@ const Projects = (params) => {
       whileInView="show"
       variants={variants}
     >
+      <Head>
+        <title>Get In Touch - JMSabanes</title>
+      </Head>
       <TitleMotion variants={childrenVariants}>
         Get In Touch
         <motion.div className="bar" />

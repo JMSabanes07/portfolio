@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 import Layout from 'components/layout'
 import {
   PageContainerExtend,
@@ -6,7 +7,6 @@ import {
   Article,
 } from 'styles/pages/projects'
 import { motion } from 'framer-motion'
-import { Button } from 'styles/components/button'
 import { Title, Subtitle, Desc } from 'styles/pages/container'
 import { FaGlobe } from 'react-icons/fa'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
@@ -80,21 +80,6 @@ const Projects = (params) => {
       opacity: 0,
       transition: {
         delay: 0.2,
-      },
-    },
-  }
-
-  const hoverVariants = {
-    show: {
-      background: 'rgba(0,0,0,0.5)',
-      transition: {
-        ease: 'easeInOut',
-      },
-    },
-    hidden: {
-      background: 'rgba(0,0,0,0)',
-      transition: {
-        ease: 'easeInOut',
       },
     },
   }
@@ -180,6 +165,9 @@ const Projects = (params) => {
 
   return (
     <PageContainerExtend>
+      <Head>
+        <title>My Projects - JMSabanes</title>
+      </Head>
       <TitleMotion
         initial="hidden"
         whileInView="show"
@@ -212,10 +200,6 @@ const Projects = (params) => {
                         <img src={image.src} alt={image.alt} />
                       </header>
                       <DescMotion variants={''} textAlign="justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quas totam, fugit, sed unde in nulla nisi maiores, autem
-                        corrupti quod qui praesentium sapiente magni iste
-                        repellat ad! Nisi, totam quod.
                         {desc}
                       </DescMotion>
                     </motion.main>

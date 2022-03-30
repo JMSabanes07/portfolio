@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from 'components/layout'
 import { PageContainer } from 'styles/pages/container'
 import { CoverPage } from 'styles/pages/home'
@@ -46,6 +47,9 @@ const Home = () => {
   }
   return (
     <PageContainer>
+      <Head>
+        <title>Home - JMSabanes</title>
+      </Head>
       <CoverPageMotion initial="hidden" whileInView="show" variants={variants}>
         <section className="desc">
           <p>Hi! i&#39;m</p>
