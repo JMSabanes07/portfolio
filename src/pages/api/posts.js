@@ -6,6 +6,9 @@ const prisma = new PrismaClient()
 const handler = async (req, res) => {
   if (req.method === 'GET') {
     const post = await prisma.post.findMany({
+      orderBy: {
+        createdAt: 'asc',
+      },
       include: {
         image: true,
         variants: true,
