@@ -98,11 +98,11 @@ const About = () => {
           <DescMotion textAlign="justify" {...childrenVariants}>
             I&#39;m a self-taught Software Developer located in Argentina. I
             have a passion for writing code, almost as much as playing games,
-            watch anime or eat potato omelette.
+            watching anime or eating potato omelette.
             <br />
             <br />
-            Interested in the whole front-end spectrum and in learn new things
-            with each line of code.
+            Interested in the whole front-end spectrum and in learning new
+            things with each line of code.
           </DescMotion>
         </div>
       </div>
