@@ -197,7 +197,7 @@ const Projects = (params) => {
                     </SubtitleMotion>
                     <motion.main>
                       <header>
-                        <img src={image.src} alt={image.alt} />
+                        <img src={image?.src} alt={image?.alt} />
                       </header>
                       <DescMotion variants={''} textAlign="justify">
                         {desc}
@@ -205,7 +205,7 @@ const Projects = (params) => {
                     </motion.main>
                     <motion.footer variants={footerArticleVariants}>
                       <motion.ul initial="hidden" variants={socialVariants}>
-                        {variants.map((variant, i) => {
+                        {variants?.map((variant, i) => {
                           return (
                             <motion.li key={i}>
                               {Icons[variant.name]()}
