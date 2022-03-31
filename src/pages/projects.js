@@ -197,7 +197,7 @@ const Projects = (params) => {
                     </SubtitleMotion>
                     <motion.main>
                       <header>
-                        <img src={image?.src} alt={image?.alt} />
+                        {image && <img src={image?.src} alt={image?.alt} />}
                       </header>
                       <DescMotion variants={''} textAlign="justify">
                         {desc}
