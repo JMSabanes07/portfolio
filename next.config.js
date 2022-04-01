@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  optimizeFonts: false,
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
