@@ -5,6 +5,7 @@ import { ScrollProvider } from 'contexts/scrollContext'
 import { GlobalStyle } from '../styles/global'
 import { LoaderProvider } from 'contexts/loaderContext'
 import PageLoader from 'components/pageLoader'
+import Script from 'next/script'
 
 const EmptyComponent = ({ children }) => <>{children}</>
 
@@ -21,6 +22,19 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script
+        strategy="lazyOnLoad"
+        src="https://www.googletagmanager.com/gtag/js?id=G-H6E21576FL"
+      />
+      <Script id="googleAnalytics" strategy="lazyOnLoad">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-H6E21576FL');
+        `}
+      </Script>
       <GlobalStyle />
       <ScrollProvider>
         <LoaderProvider>
