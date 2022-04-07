@@ -12,39 +12,40 @@ import { useViewport } from 'hooks/useViewport'
 const CoverPageMotion = motion(CoverPage)
 const ButtonMotion = motion(Button)
 
+const variants = {
+  show: {
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.5,
+    },
+  },
+  hidden: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const childrenVariants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+  hidden: {
+    y: '50%',
+    opacity: 0,
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+}
+
 const Home = () => {
   const { goTo } = useChangePage()
   const { mediaQuery } = useViewport(768)
-  const variants = {
-    show: {
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.5,
-      },
-    },
-    hidden: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const childrenVariants = {
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        ease: 'easeInOut',
-      },
-    },
-    hidden: {
-      y: '50%',
-      opacity: 0,
-      transition: {
-        ease: 'easeInOut',
-      },
-    },
-  }
   return (
     <PageContainer>
       <Head>
