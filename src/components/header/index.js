@@ -25,9 +25,9 @@ const Header = () => {
       }}
     >
       <Logo>
-        <h2>
+        <h3>
           {'<'} JMS {'/>'}
-        </h2>
+        </h3>
       </Logo>
       {mediaQuery ? <DesktopMenu /> : <Menu />}
     </HeaderContainerMotion>

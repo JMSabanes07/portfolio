@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Layout from 'components/layout'
 import { motion } from 'framer-motion'
 import { Title, Desc } from 'styles/pages/container'

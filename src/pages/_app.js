@@ -22,6 +22,8 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/favicon.ico" />
         <title>Juan Manuel Sabanes Software Developer - Portfolio Web</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="canonical" href="https://jmsabanes.com" />
       </Head>
       <Script
         strategy="lazyOnLoad"

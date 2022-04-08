@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Layout from 'components/layout'
 import { PageContainer } from 'styles/pages/container'
 import { CoverPage } from 'styles/pages/home'
