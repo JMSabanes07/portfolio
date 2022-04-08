@@ -12,7 +12,7 @@ const SocialsMotion = motion(Socials)
 const TitleMotion = motion(Title)
 const DescMotion = motion(Desc)
 
-const Projects = (params) => {
+const Contact = (params) => {
   const mailTo = () => {
     location.href = `mailto:${process.env.MAIL}`
   }
@@ -84,9 +84,6 @@ const Projects = (params) => {
       whileInView="show"
       variants={variants}
     >
-      <Head>
-        <title>Get In Touch - JMSabanes</title>
-      </Head>
       <TitleMotion variants={childrenVariants}>
         Get In Touch
         <motion.div className="bar" />
@@ -150,6 +147,6 @@ const Projects = (params) => {
   )
 }
 
-Projects.Layout = Layout
+Contact.Layout = Layout
 
-export default Projects
+export default Contact

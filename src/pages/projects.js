@@ -165,9 +165,6 @@ const Projects = (params) => {
 
   return (
     <PageContainerExtend>
-      <Head>
-        <title>My Projects - JMSabanes</title>
-      </Head>
       <TitleMotion
         initial="hidden"
         whileInView="show"

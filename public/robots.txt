@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jmsabanes.com
+
+# Sitemaps
+Sitemap: https://jmsabanes.com/sitemap.xml

@@ -48,9 +48,6 @@ const Home = () => {
   const { mediaQuery } = useViewport(768)
   return (
     <PageContainer>
-      <Head>
-        <title>Home - JMSabanes</title>
-      </Head>
       <CoverPageMotion initial="hidden" whileInView="show" variants={variants}>
         <section className="desc">
           <p>Hi! i&#39;m</p>
@@ -61,7 +58,7 @@ const Home = () => {
           />
           <TypeAnimation
             cursor={true}
-            sequence={['Frontend Developer', 1000]}
+            sequence={['Software Developer', 1000]}
             wrapper="h2"
           />
           <motion.p variants={childrenVariants}>

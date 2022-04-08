@@ -18,9 +18,10 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="I'm Juan Manuel Sabanes and i'm a self-taught Software Developer. This is my web portfolio where i show my skills and my personal and professional projects."
+          content="I'm Juan Manuel Sabanes and i'm a self-taught Software Developer. This is my web portfolio where i show you my skills like react js, my projects and more."
         />
         <link rel="icon" href="/favicon.ico" />
+        <title>Juan Manuel Sabanes Software Developer - Portfolio Web</title>
       </Head>
       <Script
         strategy="lazyOnLoad"

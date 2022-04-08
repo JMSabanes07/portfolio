@@ -80,9 +80,6 @@ const About = () => {
       viewport={{ once: true }}
       custom={0.3}
     >
-      <Head>
-        <title>About Me - JMSabanes</title>
-      </Head>
       <TitleMotion {...childrenVariants}>
         About Me
         <motion.div className="bar" />
