@@ -85,7 +85,7 @@ const About = () => {
       </TitleMotion>
       <div className="about">
         <motion.div className="imageContainer" {...childrenVariants}>
-          <img src="/avatar.png" alt="me" />
+          <img src="/avatar.png" alt="juan manuel sabanes avatar" />
         </motion.div>
         <div className="desc">
           <SubtitleMotion textAlign="center" {...childrenVariants}>
