@@ -22,7 +22,7 @@ export const HeaderContainer = styled.header`
 `
 
 export const Logo = styled.div`
-  h2 {
+  h3 {
     font-size: 2rem;
     font-weight: 700;
   }
