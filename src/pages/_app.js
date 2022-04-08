@@ -20,6 +20,10 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="I'm Juan Manuel Sabanes and i'm a self-taught Software Developer. This is my web portfolio where i show you my skills like react js, my projects and more."
         />
+        <meta
+          name="google-site-verification"
+          content="cHfFXGS7V4hvsE2yApQJxUycf7aLuCQJf7y9zH4FdXM"
+        />
         <link rel="icon" href="/favicon.ico" />
         <title>Juan Manuel Sabanes Software Developer - Portfolio Web</title>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
